@@ -9,7 +9,8 @@
       "require": "./dist/index.js"
     },
     "./styles.css": "./dist/styles.css",
-    "./theme.css": "./dist/theme.css"
+    "./theme.css": "./dist/theme.css",
+    "./package.json": "./package.json"
   },
   "browser": {
     "./styles.css": "./dist/styles.css",
