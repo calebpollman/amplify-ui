@@ -16,7 +16,8 @@ function findSharedPackages(root, sharedPackagesFolder) {
         withFileTypes: true,
       })
         .filter(
-          ({ isDirectory, name }) => isDirectory() && !name.startsWith('.'),
+          (directory) =>
+            directory.isDirectory() && !directory.name.startsWith('.'),
         )
         .map(({ name }) => {
           const packagePath = path.resolve(sharedPackageRoot, name);

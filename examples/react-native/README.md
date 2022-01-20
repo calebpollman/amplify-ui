@@ -25,3 +25,5 @@ After the Example App has been installed on a simulator or emulator:
 
 - run `yarn react-native-example dev` from the monorepo root
 - open the app on the iOS simulator or Android emulator
+
+## Adding Dependencies - TODO
