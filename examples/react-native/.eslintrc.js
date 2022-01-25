@@ -7,4 +7,8 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
   },
+  files: ['**/*.e2e.ts'],
+  env: {
+    jest: true,
+  },
 };
