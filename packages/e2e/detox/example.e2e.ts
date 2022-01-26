@@ -15,14 +15,14 @@ describe('Example', () => {
 
   it('should have the expected initial press count', async () => {
     await expect(element(by.id('pressed-count'))).toHaveText(
-      'Pressed Count: 0',
+      'Pressed Count: 0'
     );
   });
 
   it('should show incremented press count after tap', async () => {
     await element(by.id('increment-button')).tap();
     await expect(element(by.id('pressed-count'))).toHaveText(
-      'Pressed Count: 1',
+      'Pressed Count: 1'
     );
   });
 });

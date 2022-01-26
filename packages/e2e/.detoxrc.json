@@ -5,8 +5,8 @@
   "apps": {
     "ios": {
       "type": "ios.app",
-      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/ReactNative.app",
-      "build": "xcodebuild -workspace ios/ReactNative.xcworkspace -scheme ReactNative -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+      "binaryPath": "../../examples/react-native/ios/build/Build/Products/Debug-iphonesimulator/ReactNative.app",
+      "build": "xcodebuild -workspace ../../examples/react-native/ios/ReactNative.xcworkspace -scheme ReactNative -configuration Debug -sdk iphonesimulator -derivedDataPath ../../examples/react-native/ios/build"
     }
   },
   "devices": {

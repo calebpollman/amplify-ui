@@ -7,7 +7,8 @@
     "dev": "TZ=UTC cypress open",
     "test": "TZ=UTC cypress run --spec features/ui/components/authenticator/*.features",
     "test:authenticator": "TZ=UTC cypress run --spec features/ui/components/authenticator/*.features",
-    "test:theme": "TZ=UTC cypress run --spec features/ui/theme/*.features"
+    "test:theme": "TZ=UTC cypress run --spec features/ui/theme/*.features",
+    "test:react-native": "detox build -c ios && detox test -c ios -u --detectOpenHandles"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
@@ -18,9 +19,27 @@
     "@aws-amplify/ui": "^3.0.9",
     "@testing-library/cypress": "^7.0.6",
     "@types/cypress-cucumber-preprocessor": "^4.0.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^26.6.3",
     "cypress": "^8.5.0",
+    "detox": "^19.4.2",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^27.4.6",
     "cypress-cucumber-preprocessor": "^4.1.2",
     "dotenv-safe": "^8.2.0",
+    "metro-react-native-babel-preset": "^0.66.2",
     "typescript": "^4.3.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
