@@ -352,7 +352,7 @@ export function signInActor({ services }: SignInMachineOptions) {
         },
         rejected: {
           type: 'final',
-          data: (context, event) => {
+          data: (context) => {
             return {
               intent: context.redirectIntent,
               authAttributes: context.authAttributes,
@@ -424,7 +424,7 @@ export function signInActor({ services }: SignInMachineOptions) {
             password,
           });
         },
-        async confirmSignIn(context, event) {
+        async confirmSignIn(context) {
           const { challengeName, user } = context;
           const { confirmation_code: code } = context.formValues;
 
@@ -438,13 +438,13 @@ export function signInActor({ services }: SignInMachineOptions) {
 
           return await services.handleConfirmSignIn({ user, code, mfaType });
         },
-        async forceNewPassword(context, event) {
+        async forceNewPassword(context) {
           const { user, formValues } = context;
           const { password } = formValues;
 
           return Auth.completeNewPassword(user, password);
         },
-        async verifyTotpToken(context, event) {
+        async verifyTotpToken(context) {
           const { user } = context;
           const { confirmation_code } = context.formValues;
 
@@ -455,13 +455,13 @@ export function signInActor({ services }: SignInMachineOptions) {
 
           return await Auth.federatedSignIn({ provider });
         },
-        async checkVerifiedContact(context, event) {
+        async checkVerifiedContact(context) {
           const { user } = context;
           const result = await Auth.verifiedContact(user);
 
           return result;
         },
-        async verifyUser(context, event) {
+        async verifyUser(context) {
           const { unverifiedAttr } = context.formValues;
           const result = await Auth.verifyCurrentUserAttribute(unverifiedAttr);
 
@@ -469,7 +469,7 @@ export function signInActor({ services }: SignInMachineOptions) {
 
           return result;
         },
-        async confirmVerifyUser(context, event) {
+        async confirmVerifyUser(context) {
           const { attributeToVerify } = context;
           const { confirmation_code } = context.formValues;
 
@@ -478,7 +478,7 @@ export function signInActor({ services }: SignInMachineOptions) {
             confirmation_code
           );
         },
-        async validateFields(context, event) {
+        async validateFields(context) {
           return runValidators(context.formValues, context.touched, [
             defaultServices.validateConfirmPassword,
           ]);

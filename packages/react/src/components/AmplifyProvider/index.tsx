@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { IdProvider } from '@radix-ui/react-id';
 
-import { createTheme, defaultTheme, Theme as UiTheme } from '@aws-amplify/ui';
+import { createTheme, defaultTheme, Theme } from '@aws-amplify/ui';
 
 import { AmplifyContext } from './AmplifyContext';
 
-export type Theme = UiTheme;
 export type ColorMode = 'system' | 'light' | 'dark';
 
 interface AmplifyProviderProps {

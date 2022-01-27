@@ -172,7 +172,7 @@ export function resetPasswordActor({ services }: ResetPasswordMachineOptions) {
         setUsername,
       },
       guards: {
-        shouldAutoConfirmReset: (context, event): boolean => {
+        shouldAutoConfirmReset: (context): boolean => {
           return !!(
             context.intent && context.intent === 'confirmPasswordReset'
           );
@@ -194,7 +194,7 @@ export function resetPasswordActor({ services }: ResetPasswordMachineOptions) {
             password,
           });
         },
-        async validateFields(context, event) {
+        async validateFields(context) {
           return runValidators(context.formValues, context.touched, [
             defaultServices.validateConfirmPassword,
           ]);
