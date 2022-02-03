@@ -84,12 +84,13 @@ export const useAuthenticator = (selector?: Selector) => {
   // send aliases are static and thus can be memoized
   const sendAliases = React.useMemo<ReturnType<typeof getSendEventAliases>>(
     () => getSendEventAliases(send),
-    [service]
+    [send]
   );
 
-  const getFacade = (state: AuthMachineState) => {
-    return { ...sendAliases, ...getServiceContextFacade(state) };
-  };
+  const getFacade = (state: AuthMachineState) => ({
+    ...sendAliases,
+    ...getServiceContextFacade(state),
+  });
 
   /**
    * For `useSelector`'s selector argument, we just return back the `state`.

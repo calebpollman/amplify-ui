@@ -117,7 +117,7 @@ export const getAliasInfoFromContext = (
   context: AuthContext,
   // TODO This function & its signature should be renamed since aliases were rolled back
   alias?: LoginMechanism
-) => {
+): { label: string; type: string; error: any } => {
   const loginMechanisms = context.config?.loginMechanisms;
   const error = context.actorRef?.context?.validationError['username'];
 
@@ -129,7 +129,6 @@ export const getAliasInfoFromContext = (
     };
   }
 
-  let type = 'text';
   const label = loginMechanisms
     .filter((mechanism) => includes(LoginMechanismArray, mechanism))
     .map((v) => {
@@ -139,9 +138,10 @@ export const getAliasInfoFromContext = (
     })
     .join(' or ');
 
-  if (loginMechanisms.length === 1) {
-    type = authInputAttributes[loginMechanisms[0]]?.type ?? 'text';
-  }
+  const type =
+    loginMechanisms.length === 1
+      ? authInputAttributes[loginMechanisms[0]]?.type ?? 'text'
+      : 'text';
 
   return { label, type, error };
 };
@@ -209,7 +209,7 @@ export const getSendEventAliases = (send: Sender<AuthEvent>) => {
     toSignIn: sendToMachine('SIGN_IN'),
     toSignUp: sendToMachine('SIGN_UP'),
     skipVerification: sendToMachine('SKIP'),
-  } as const;
+  };
 };
 
 export const getServiceContextFacade = (state: AuthMachineState) => {
