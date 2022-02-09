@@ -23,7 +23,7 @@ export default function Button({
   ...pressableProps
 }: ButtonProps) {
   return (
-    <Pressable {...pressableProps}>
+    <Pressable {...pressableProps} style={{ backgroundColor: 'red' }}>
       {typeof children === 'string' ? (
         <Text style={[styles.text, textStyle]}>{children}</Text>
       ) : (

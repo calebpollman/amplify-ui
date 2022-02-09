@@ -7,9 +7,12 @@ import {
   UtilityOptions,
 } from '@aws-amplify/ui-react-native';
 
+import { here } from './src';
+
 const options: UtilityOptions = { name: 'test test' };
 
 const App = () => {
+  here();
   const utilityName = useUtility(options);
   const [pressedCount, setPressedCount] = useState(0);
 
