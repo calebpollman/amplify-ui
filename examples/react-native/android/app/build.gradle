@@ -1,5 +1,13 @@
 apply plugin: "com.android.application"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+project.ext.envConfigFiles = [
+  developmentdebug: ".env.storybook",
+  developmentrelease: ".env.storybook",
+  productiondebug: ".env.test",
+  productionrelease: ".env.test"
+]
+
 import com.android.build.OutputFile
 
 /**
@@ -156,6 +164,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
             if (nativeArchitectures) {
                 ndk {
                     abiFilters nativeArchitectures.split(',')
@@ -170,6 +179,12 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    flavorDimensions "default"
+    productFlavors {
+        production {}
+        development {}
+    }
+
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->

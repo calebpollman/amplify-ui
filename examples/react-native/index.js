@@ -12,6 +12,8 @@ import { loadStories } from './storybook/storyLoader';
 
 const isStorybook = config.STORYBOOK === 'true';
 
+console.log('config', config);
+
 if (isStorybook) {
   configure(() => {
     loadStories();
