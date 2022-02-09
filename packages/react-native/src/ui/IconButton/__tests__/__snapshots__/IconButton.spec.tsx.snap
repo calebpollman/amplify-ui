@@ -3,6 +3,7 @@
 exports[`IconButton renders as expected 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={true}
   onBlur={[Function]}
   onClick={[Function]}

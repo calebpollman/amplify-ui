@@ -45,6 +45,7 @@ exports[`FullScreenMessage renders a message as expected with an image 1`] = `
       >
         <View
           accessible={true}
+          collapsable={false}
           focusable={true}
           hitSlop={
             Object {
@@ -79,7 +80,7 @@ exports[`FullScreenMessage renders a message as expected with an image 1`] = `
           <Image
             source={
               Object {
-                "testUri": "../../../packages/react-native/src/icons/close.png",
+                "testUri": "../../../src/assets/close.png",
               }
             }
             style={
@@ -179,6 +180,7 @@ exports[`FullScreenMessage renders a message as expected without an image 1`] = 
       >
         <View
           accessible={true}
+          collapsable={false}
           focusable={true}
           hitSlop={
             Object {
@@ -213,7 +215,7 @@ exports[`FullScreenMessage renders a message as expected without an image 1`] = 
           <Image
             source={
               Object {
-                "testUri": "../../../packages/react-native/src/icons/close.png",
+                "testUri": "../../../src/assets/close.png",
               }
             }
             style={

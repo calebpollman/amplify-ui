@@ -13,8 +13,10 @@
 
 import { Options, utility } from '@aws-amplify/ui-react-core';
 
-export * from './InAppMessaging';
 export { createTheme } from '@aws-amplify/ui';
+
+export * from './InAppMessaging';
+export * from './ui';
 
 export interface UtilityOptions extends Options {}
 

@@ -3,6 +3,7 @@
 exports[`Button renders as expected with a component passed as children 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -23,6 +24,7 @@ exports[`Button renders as expected with a component passed as children 1`] = `
 exports[`Button renders as expected with a string passed as children 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={true}
   onBlur={[Function]}
   onClick={[Function]}

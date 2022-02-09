@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { useUtility, UtilityOptions } from '@aws-amplify/ui-react-native';
+import {
+  Button,
+  useUtility,
+  UtilityOptions,
+} from '@aws-amplify/ui-react-native';
 
 const options: UtilityOptions = { name: 'test test' };
 
@@ -16,13 +20,13 @@ const App = () => {
   return (
     <View style={style.container}>
       <Text style={style.heading}>{utilityName}</Text>
-      <Pressable
+      <Button
         onPress={handlePress}
         style={style.button}
         testID="increment-button"
       >
         <Text style={style.text}>Press Me</Text>
-      </Pressable>
+      </Button>
       <Text
         style={style.text}
         testID="pressed-count"

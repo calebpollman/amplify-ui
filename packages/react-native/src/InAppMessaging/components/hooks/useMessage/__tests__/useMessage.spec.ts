@@ -28,7 +28,7 @@ import { InAppMessageComponentBaseProps } from '../../../types';
 import useMessage from '../useMessage';
 
 jest.mock('@aws-amplify/notifications', () => ({
-  ...jest.requireActual('@aws-amplify/notifications'),
+  ...jest.requireActual<any>('@aws-amplify/notifications'),
   Notifications: { InAppMessaging: { notifyMessageInteraction: jest.fn() } },
 }));
 

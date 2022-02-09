@@ -14,9 +14,9 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 
+import { Button, IconButton } from '@ui';
 import icons from '../../../assets';
 import TestIDs from '../../../AmplifyTestIDs';
-import { Button, IconButton } from '../../ui';
 
 import { ICON_BUTTON_HIT_SLOP, ICON_BUTTON_SIZE } from '../constants';
 import { useMessageProps } from '../hooks';

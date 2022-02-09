@@ -9,7 +9,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['.eslintrc.js', 'jest.config.js', 'babel.config.js'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    'jest.config.js',
+    'babel.config.js',
+    'dist/',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: { jsx: true },

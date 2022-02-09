@@ -24,7 +24,7 @@ import {
   InAppMessageLayout,
 } from '@aws-amplify/notifications';
 
-import { ButtonProps } from '../ui';
+import { ButtonProps } from '../../ui';
 
 export type InAppMessageComponentButtonStyle = {
   container?: ButtonProps['style'];
