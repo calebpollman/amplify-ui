@@ -22,7 +22,7 @@
     "prebuild": "rimraf dist node_modules",
     "build": "tsup --minify",
     "dev": "tsup --watch src",
-    "lint": "tsc --noEmit && eslint src",
+    "lint": "tsc --noEmit --project tsconfig.dev.json && eslint src",
     "test": "jest"
   },
   "dependencies": {},
