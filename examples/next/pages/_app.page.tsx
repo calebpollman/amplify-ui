@@ -5,6 +5,7 @@ import App from 'next/app';
 import { Amplify, Hub } from 'aws-amplify';
 import { Authenticator, AmplifyProvider } from '@aws-amplify/ui-react';
 import { useEffect } from 'react';
+// add to deps and remove nohoist?
 import { MapProvider, useMap } from 'react-map-gl';
 
 if (typeof window !== 'undefined') {

@@ -54,9 +54,7 @@ const internalPackages = getInternalPackages(
   INTERNAL_DIRECTORY_ROOTS
 );
 
-// prevent watching the entire repo, only watch:
-// - root node_modules
-// - used internal deps
+// only watch the used internal deps
 const watchFolders = internalPackages
   .filter(isInternalUsedDep)
   .map(({ packagePath }) => packagePath);
@@ -95,7 +93,12 @@ config.resolver.blockList = [
 
 // point to the example app react-native dep
 config.resolver.extraNodeModules = {
+  react: path.resolve(__dirname, 'node_modules/react'),
   'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+  'react-native-safe-area-context': path.resolve(
+    __dirname,
+    'node_modules/react-native-safe-area-context'
+  ),
 };
 
 // base transform values included by `react-native init`

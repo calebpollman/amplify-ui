@@ -1,7 +1,10 @@
 import { ConsoleLogger as Logger } from '@aws-amplify/core';
 
-import { MessageButton, MessageContent } from '../../../types';
-import { BannerMessageLayouts } from '../../../types';
+import {
+  BannerMessageLayouts,
+  MessageButton,
+  MessageContent,
+} from '../../../types';
 import { getActionHandler, getContentProps, getPositionProp } from '../utils';
 
 // use empty mockImplementation to turn off console output
