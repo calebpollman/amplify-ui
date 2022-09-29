@@ -98,8 +98,8 @@ jobs:
           - angular
           - vue
           - react
-          - react-native
           - react-core
+          - react-native
 
     steps:
       - name: Checkout Amplify UI
