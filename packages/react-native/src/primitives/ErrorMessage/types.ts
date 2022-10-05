@@ -7,7 +7,4 @@ export interface ErrorMessageProps extends TextProps {
 
 export interface ErrorMessageStyles {
   container: ViewStyle;
-  iconContainer: ViewStyle;
-  text: TextStyle;
-  textContainer: ViewStyle;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { ErrorMessage } from '@aws-amplify/ui-react-native/dist/primitives';
 
@@ -17,7 +17,11 @@ const OnDismissDemo = () => {
 };
 
 storiesOf('ErrorMessage', module)
-  .add('default', () => <ErrorMessage>Default ErrorMessage</ErrorMessage>)
+  .add('default', () => (
+    <View style={{ paddingHorizontal: 24 }}>
+      <ErrorMessage>Default ErrorMessage</ErrorMessage>
+    </View>
+  ))
   .add('onDismiss', () => <OnDismissDemo />)
   .add('styles', () => (
     <ErrorMessage style={styles.alert} textStyle={styles.whiteText}>
@@ -27,7 +31,9 @@ storiesOf('ErrorMessage', module)
   .add('long text', () => (
     <ErrorMessage>
       This is a long string of text in order to test how the ErrorMessage
-      container responds
+      container responds. This is a long string of text in order to test how the
+      ErrorMessage container responds. This is a long string of text in order to
+      test how the ErrorMessage container responds
     </ErrorMessage>
   ));
 

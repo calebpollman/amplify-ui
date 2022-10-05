@@ -32,20 +32,27 @@ export default function Label({
       accessibilityRole={accessibilityRole}
       style={[styles.container, style]}
     >
-      <View style={styles.iconContainer}>
-        <Icon source={icons.error} size={20} />
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={[styles.text, textStyle]}>{children}</Text>
-      </View>
-      <View style={styles.iconContainer}>
-        <IconButton
-          source={icons.close}
-          size={20}
-          onPress={dismissErrorMessage}
-          testID="dismissButton"
-        />
-      </View>
+      {/* <Icon source={icons.error} size={20} style={{ marginRight: 'auto' }} /> */}
+      <Icon
+        source={icons.error}
+        size={20}
+        style={{ margin: 4, backgroundColor: 'antiquewhite' }}
+      />
+      <Text
+        style={[
+          { paddingHorizontal: 4, backgroundColor: 'red', flex: 1 },
+          textStyle,
+        ]}
+      >
+        {children}
+      </Text>
+      <IconButton
+        source={icons.close}
+        size={20}
+        onPress={dismissErrorMessage}
+        style={{ margin: 4, backgroundColor: 'lightblue' }}
+        testID="dismissButton"
+      />
     </View>
   );
 }
