@@ -1,5 +1,11 @@
 # @aws-amplify/ui
 
+## 6.0.6
+
+### Patch Changes
+
+- [#4777](https://github.com/aws-amplify/amplify-ui/pull/4777) [`4f643b05b`](https://github.com/aws-amplify/amplify-ui/commit/4f643b05b010901226bf200f8d0b06601d0ecab5) Thanks [@calebpollman](https://github.com/calebpollman)! - chore(ui): fix defaultAuthHubListener unit tests, remove asynchronous declaration
+
 ## 6.0.5
 
 ### Patch Changes
